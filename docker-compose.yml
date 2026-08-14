@@ -14,8 +14,8 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: node-backend
     restart: always
     ports:
@@ -30,8 +30,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: Dockerfile
+      context: ./Frontend
+      dockerfile: dockerfile
     container_name: react-frontend
     restart: always
     ports:
