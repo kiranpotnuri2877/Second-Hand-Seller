@@ -1,4 +1,4 @@
-# Stage 1: Build Frontend
+# Stage 1: Build React Frontend
 FROM node:16-alpine AS frontend-builder
 WORKDIR /app/Frontend
 COPY Frontend/package*.json ./
@@ -6,13 +6,15 @@ RUN npm install --legacy-peer-deps
 COPY Frontend/ ./
 RUN npm run build
 
-# Stage 2: Run Backend
+# Stage 2: Serve Backend & Frontend
 FROM node:20-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 COPY . .
-# Frontend build ఫైల్స్ ని ఇక్కడికి కాపీ చేయడం
+
+# ఇక్కడ రెండు చోట్లా (frontend & Frontend) కాపీ చేస్తున్నాం - Case mismatch రాకుండా
+COPY --from=frontend-builder /app/Frontend/build ./frontend/build
 COPY --from=frontend-builder /app/Frontend/build ./Frontend/build
 
 EXPOSE 5001
