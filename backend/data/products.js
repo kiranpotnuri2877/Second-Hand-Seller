@@ -55,9 +55,9 @@ const products = [
   {
     name: 'Nokia Mobile',
     images: [
-      { image1: 'https://images.unsplash.com/photo-1511707171634-5f897ff02560?w=500' },
       { image1: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500' },
-      { image1: 'https://images.unsplash.com/photo-1567581935884-3349723552ca?w=500' },
+      { image1: 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500' },
+      { image1: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=500' },
     ],
     description:
       'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
