@@ -17,7 +17,7 @@ pipeline {
         stage('2. Build & Deploy with Docker Compose') {
             steps {
                 echo "Deploying via Docker Compose..."
-                sh 'docker rm -f team-db team-backend team-frontend || true'
+                sh 'docker rm -f project3-db project3-backend project3-frontend || true'
                 sh 'docker compose down || docker-compose down || true'
                 sh 'docker compose up --build -d || docker-compose up --build -d'
             }
