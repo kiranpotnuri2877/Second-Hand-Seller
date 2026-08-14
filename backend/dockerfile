@@ -13,7 +13,7 @@ COPY package*.json ./
 RUN npm install --production
 COPY . .
 
-# ఇక్కడ రెండు చోట్లా (frontend & Frontend) కాపీ చేస్తున్నాం - Case mismatch రాకుండా
+# Build ఫైల్స్ మొత్తం (public images తో సహా) కాపీ చేయడం
 COPY --from=frontend-builder /app/Frontend/build ./frontend/build
 COPY --from=frontend-builder /app/Frontend/build ./Frontend/build
 
